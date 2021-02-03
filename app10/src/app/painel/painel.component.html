@@ -1,0 +1,42 @@
+<div class="container">
+	<div class="jumbotron">
+		<!--Linha 1, progresso e tentativa, grid sm6 = 576px-->
+		<div class="row">
+			<div class="col-sm-6">
+				<app-progresso [progresso]="progresso"></app-progresso>
+				<!--atributo progresso do Component filho recebe valores de atributos do atributo progresso do component pai via PropertyBinding -->
+			</div>
+			<div class="col-sm-6">
+
+				<div class="d-flex flex-row-reverse bd-highlight">
+					<app-tentativas [tentativas]="tentativas"></app-tentativas>
+				</div>
+			</div>
+		</div>
+
+		<!--Linha 2, textarea e labels--> 
+		<div class="row">
+			<div class="col">
+				<h5>{{instrucao}}</h5>
+				<p>{{rodadaFrase.fraseENG}}</p>
+
+				<!--Two-Way Binding-->
+				<div class="form-group">
+					<!--($event) é um parâmetro do angular utilizado para passar um evento do template (html) para um método da classe de um component.-->
+					<textarea class="form-control" rows="3" (input)="attResposta($event)" [value]="resposta"></textarea>
+					<!--[value] = "resposta"  PropertyBinding, realizando assim two-way binding junto com o eventbinding: (input) = "attResposta($event)-->
+				</div>
+			</div>
+		</div>
+
+		<!--Linha 3, Botão-->
+		<div class="row">
+			<div class="col">
+				<div class="d-flex flex-row-reverse bd-highlight">
+					<button type="button" class="btn btn-primary" (click)="verificaResposta()">Verificar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

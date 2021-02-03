@@ -1,0 +1,36 @@
+<app-topo></app-topo>
+
+<!--Event Binding-->
+<div *ngIf = "jogoEmAndamento; else fimDeJogo">
+    <app-painel (encerrarJogo) = "encerrarJogo($event)"></app-painel>  <!--O evento(Método) encerrarJogo() do app.component só será ativado quando receber 
+        uma emissão de evento do atributo encerrarJogo do component filho (painel), para executar essa função de emissão do objeto encerrarJogo, 
+        basta utilizar () e passar por parâmetro um evento a ser executado ($event) -->
+</div>
+
+<!--ng-template permite criar um template sem a necessidade de instanciar um componente, no caso, com o uso do # ele aponta para o else do ngIf.-->
+<ng-template #fimDeJogo>
+    <div *ngIf ="tipoEncerramento === 'Derrota'; else fimDeJogoVitoria" class="container" style="margin-top: 45px;">
+        <div class="row">
+            <div class="col">
+                <h2 style="color: red;" >Você perdeu!!</h2>
+                <button class="btn btn-primary" (click) = "reiniciarJogo()">Jogar Novamente </button>
+            </div>
+        </div>
+    </div>
+    
+</ng-template>
+
+<ng-template #fimDeJogoVitoria>
+    <div class="container" style="margin-top: 45px;">
+        <div class="row">
+            <div class="col">
+                <h2 style="color: green;" >Você Ganhou!!</h2>
+                <button class="btn btn-primary" (click) = "reiniciarJogo()">Jogar Novamente </button>
+            </div>
+        </div>
+    </div>
+    
+</ng-template>
+
+
+

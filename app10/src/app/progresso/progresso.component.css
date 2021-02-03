@@ -1,0 +1,10 @@
+/*Uso de bootstrap para criar a barra e CSS para estiizar alguns elementos da barra.*/
+
+.progress{
+    background: #eef8eeDA;
+    border-color: solid 1px #99ce28;
+}
+
+.progress-bar{
+    background: #99ce28;
+}
