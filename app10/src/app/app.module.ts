@@ -1,13 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
 
-import { TopoComponent } from './topo/topo.component';
-import { PainelComponent } from './painel/painel.component';
-import { TentativasComponent } from './tentativas/tentativas.component';
-import { ProgressoComponent } from './progresso/progresso.component'
+import { TopoComponent } from "./topo/topo.component";
+import { PainelComponent } from "./painel/painel.component";
+import { TentativasComponent } from "./tentativas/tentativas.component";
+import { ProgressoComponent } from "./progresso/progresso.component";
+import { ContainerComponent } from "./container/container.component";
 
 @NgModule({
   declarations: [
@@ -15,13 +16,11 @@ import { ProgressoComponent } from './progresso/progresso.component'
     TopoComponent,
     PainelComponent,
     TentativasComponent,
-    ProgressoComponent
+    ProgressoComponent,
+    ContainerComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
